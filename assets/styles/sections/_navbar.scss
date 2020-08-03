@@ -1,0 +1,47 @@
+nav {
+  position: sticky;
+  z-index: 1;
+  top: 0;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  border-bottom: 1px solid rgb(80, 80, 80);
+
+  .logo {
+    width: 120px;
+    margin: 10px 0;
+  }
+  .links {
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    > * {
+      cursor: pointer;
+      align-self: center;
+      text-decoration: none;
+      font-family: inherit;
+      color: black;
+      font-size: 0.8em;
+      img {
+        width: 25px;
+      }
+    }
+    a:hover,
+    .active {
+      color: $secondary-color;
+    }
+    #cart-items-number {
+      display: inline-block;
+      background-color: $primary_color;
+      border-radius: 10%;
+      padding: 5px;
+      &.jump {
+        animation-name: jump;
+        animation-duration: 0.5s;
+      }
+    }
+  }
+}
+

@@ -1,0 +1,54 @@
+
+@keyframes tilt-in {
+  from {
+    transform: none;
+  }
+  to {
+    transform: rotateX(10deg);
+  }
+}
+
+
+@keyframes fade-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in {
+  to {
+    opacity: 1;
+  }
+}
+
+
+
+@keyframes jump {
+  40% {
+    transform: translateY(-15px);
+  }
+  60% {
+    transform: none;
+  }
+  80% {
+    transform: translateY(-8px);
+  }
+  90% {
+    transform: none;
+  }
+  95% {
+    transform: translateY(-4px);
+  }
+}
+
+
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    left: 100vw;
+  }
+  to {
+    opacity: 1;
+  }
+}

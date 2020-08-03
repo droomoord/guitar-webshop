@@ -1,0 +1,85 @@
+.search-item {
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  &:hover {
+    background-color: rgb(196, 196, 196);
+  }
+  > * {
+    padding: 0 20px;
+  }
+  h4 {
+    color: black;
+  }
+  img {
+    height: 70px;
+    border-radius: 50%;
+  }
+  .right {
+    position: absolute;
+    right: 20px;
+  }
+  .my-button {
+    pointer-events: painted;
+  }
+}
+
+.search-item:nth-of-type(1) {
+  margin-top: 20px;
+}
+
+.search-options {
+  background-color: darken($background_color, 5);
+  border: 1px solid grey;
+  display: flex;
+  border-radius: 5px;
+  & > * {
+    padding: 30px;
+    border-right: 1px solid grey;
+    display: flex;
+  }
+  .bar {
+    align-items: center;
+    input{
+      box-sizing: border-box;
+      border: none;
+      border-radius: 10px;
+      padding: 10px;
+      border: 2px solid white;
+      &:focus{
+        border-color: $secondary_color;
+        outline: none;
+      }
+    }
+    .delete{
+      background-color: $background_color;
+      width: 10px;
+      padding: 5px;
+      border-radius: 50%;
+      position: relative;
+      right: 27px;
+      cursor: pointer;
+    }
+  }
+  .name-desc {
+    align-items: center;
+  }
+  .category{
+    flex-direction: column;
+    border-right: none;
+  }
+  .range {
+    flex-direction: column;
+    input {
+      -moz-appearance: textfield;
+      width: 60px;
+      float: right;
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+    }
+  }
+}

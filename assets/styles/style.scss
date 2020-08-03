@@ -1,0 +1,44 @@
+@import "config/vars";
+@import "config/keyframes";
+@import "sections/browse";
+@import "sections/navbar";
+@import "sections/contact";
+@import "sections/cart";
+@import "sections/backdrop";
+@import "sections/singleItem";
+@import "sections/search";
+@import "sections/button";
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Helvetica, sans-serif;
+  color: rgb(41, 41, 41);
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  &:hover {
+    color: $secondary_color;
+  }
+}
+
+.page {
+  margin: 0;
+  padding: 20px;
+  min-height: 1000px;
+  background-color: $background_color;
+}
+
+.button {
+  cursor: pointer;
+  outline: none;
+  background-color: $secondary_color;
+  color: #fff;
+  border: none;
+  &:hover {
+    background-color: darken($secondary_color, 20);
+  }
+}

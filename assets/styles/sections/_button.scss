@@ -1,0 +1,21 @@
+.my-button {
+  cursor: pointer;
+  outline: none;
+  background-color: $secondary_color;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  border-radius: 5%;
+  .text{
+    white-space: nowrap;
+  }
+  img {
+    width: 20px;
+    height: 20px;
+    padding-right: 5px;
+  }
+  &:hover {
+    background-color: darken($secondary_color, 20);
+  }
+}
