@@ -30,7 +30,10 @@ Vue.component("Search", {
       </div>
       <div v-for="item in results" v-if="search.length > 1" :key="item.id">
         <a v-if="item.price > min && item.price < max || max == 0" :href="'./single_item.php?id=' + item.id" class="search-item" ref="searchItems">
-          <img :src="item.images[0].formats.thumbnail.url">
+          <img 
+          :src="item.images[0].formats.thumbnail.url.startsWith('http')
+          ? item.images[0].formats.thumbnail.url
+          : path + item.images[0].formats.thumbnail.url">
           <h4>{{ item.name }} - <span class="item-price"> €{{ item.price }} </span></h4>
           <span class="right" @click.prevent="$emit('clicked-add', item.id)"><my-button></my-button></span>
         </a>

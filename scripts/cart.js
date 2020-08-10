@@ -17,7 +17,11 @@ Vue.component("cart", {
         <div v-if="cart.length > 0" >
           <template v-for="(item, index) in cart">
             <li :key="index" :class="{delete: toBeDeleted === item.id}">
-            <img :src="item.images[0].formats.thumbnail.url" class="thumbnail"/>
+            <img 
+              :src="item.images[0].formats.thumbnail.url.startsWith('http')
+              ? item.images[0].formats.thumbnail.url
+              : path + item.images[0].formats.thumbnail.url" 
+              class="thumbnail"/>
             <a :href="'single_item.php?id=' + item.id">{{ item.name }}</a>
             <span>€{{ item.price }}</span>
             <div class="quantity-display">

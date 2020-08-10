@@ -25,6 +25,11 @@ a {
   }
 }
 
+a:hover,
+.active {
+  color: $secondary-color!important;
+}
+
 .page {
   margin: 0;
   padding: 20px;

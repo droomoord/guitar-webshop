@@ -5,7 +5,10 @@ $Parsedown = new Parsedown();
 $query_arr = explode('=', $_SERVER['QUERY_STRING']);
 $query_param = $query_arr[count($query_arr) - 1];
 $guitar = file_get_contents($path . "/guitars/" . $query_param);
-$guitar = json_decode($guitar); 
+$guitar = json_decode($guitar);
+if (substr( $guitar->images[0]->url, 0, 4 ) !== "http"){
+    $guitar->images[0]->url = $path . $guitar->images[0]->url;
+};
 ?>
 
 <small class="breadcrumb">
@@ -26,7 +29,10 @@ $guitar = json_decode($guitar);
             <?php
                 if(count($guitar->images) > 1){ 
                     foreach($guitar->images as $image){
-                    echo "<img @mouseOver='changeImage(\"{$image->url}\")' class='thumb' src={$image->url}></img>";
+                        if (substr( $image->url, 0, 4 ) !== "http"){
+                            $image->url = $path . $image->url;
+                        };
+                        echo "<img @mouseOver='changeImage(\"{$image->url}\")' class='thumb' src={$image->url}></img>";
                 };
             }?>
         </div>

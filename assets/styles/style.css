@@ -266,11 +266,6 @@ nav .links > * img {
   width: 25px;
 }
 
-nav .links a:hover,
-nav .links .active {
-  color: #8D3DB2;
-}
-
 nav .links #cart-items-number {
   display: inline-block;
   background-color: #f0ec00;
@@ -646,6 +641,11 @@ a {
 
 a:hover {
   color: #8D3DB2;
+}
+
+a:hover,
+.active {
+  color: #8D3DB2 !important;
 }
 
 .page {

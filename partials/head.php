@@ -6,14 +6,14 @@
     <link rel="stylesheet" href="./assets/styles/style.css">
     <script src="./scripts/vue.js" ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
-    <title>Document</title>
+    <title>The Guitar King</title>
 </head>
 <body>
 <div id="app">
-
     <?php 
     include 'navbar.php'; 
-    $path = 'https://guitar-webshop-cms.herokuapp.com'
+    $path = 'http://localhost:1337';
+    // $path = 'https://guitar-webshop-cms.herokuapp.com';
     ?>  
         <template v-if="show">
             <backdrop @click.native="show = false"></backdrop>

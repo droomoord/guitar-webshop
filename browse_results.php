@@ -1,13 +1,18 @@
 <?php 
     include 'partials/head.php';
-    include 'parsedown/Parsedown.php'; 
+    include 'parsedown/Parsedown.php';
+
     $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
     $parts = parse_url($actual_link);
     parse_str($parts['query'], $query);
     $category = $query['category'] ? '?category=' . $query['category'] : NULL;
+    
+    $start = $query['_start'] ? '&_start=' . $query['_start'] : '&_start=0';
+    $limit = $query['_limit'] ? '&_limit=' . $query['_limit'] : '&_limit=10';
+
     $sort = $query['_sort'] ? '&_sort=' . $query['_sort'] : NULL;
     $current_path = "browse_results.php$category";
-    $guitars = file_get_contents($path . "/guitars$category$sort");
+    $guitars = file_get_contents($path . "/guitars$category$sort$start$limit");
     $guitars = json_decode($guitars);
     $Parsedown = new Parsedown();
 ?>
@@ -19,7 +24,7 @@
     > 
         <a 
             href="browse_results.php?category=<?php echo $query['category']; ?>"><?php echo ucfirst($query['category']); ?> 
-        <a>     
+        </a>     
     </small>
     <label for="order">Sort by:</label>
     <select id="order" @change="goToUrl($event)">
@@ -49,9 +54,18 @@
             Z - A
         </option>
     </select>
+    <br>
 
-    <!-- start loop -->
-    <?php foreach ($guitars as $guitar) { 
+    <?php 
+    
+    include 'partials/pagination.php';    
+
+    // start loop
+
+    foreach ($guitars as $guitar) {
+        if (substr( $guitar->images[0]->formats->thumbnail->url, 0, 4 ) !== "http"){
+            $guitar->images[0]->formats->thumbnail->url = $path . $guitar->images[0]->formats->thumbnail->url;
+        };
         if(strlen($guitar->description) > 250){
             $guitar->description = substr($guitar->description, 0, 250) . '...<br/><small>-click to read more-</small>';
         };
@@ -81,7 +95,11 @@
             </div>
         </div>
 
-    <?php };?> 
+    <?php };
+    
+    include 'partials/pagination.php'; 
+
+    ?> 
     <!-- end of loop -->
 
 </div>
