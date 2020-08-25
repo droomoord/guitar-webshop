@@ -30,8 +30,6 @@ var vm = new Vue({
       this.$refs.imagelink.setAttribute("href", url);
     },
     goToUrl: function (event) {
-      console.log(event.target.value);
-
       window.location.href = event.target.value;
     },
   },

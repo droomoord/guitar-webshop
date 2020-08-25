@@ -1,0 +1,46 @@
+.landing {
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgb(11, 61, 106);
+  background: linear-gradient(
+    90deg,
+    rgba(11, 61, 106, 1) 25%,
+    rgba(139, 48, 179, 1) 79%
+  );
+  .container {
+    display: flex;
+    justify-content: space-around;
+    h1 {
+      font-size: 3em;
+    }
+    position: relative;
+    top: 200px;
+    left: 0px;
+    color: white;
+    .text {
+      width: 300px;
+      button{
+          background-color: white;
+          padding: 5px;
+          outline: none;
+          cursor: pointer;
+      }
+    }
+  }
+  img {
+    width: 35vw;
+    height: 35vw;
+    border-radius: 50%;
+  }
+  svg {
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: rotateY(180deg);
+  }
+}

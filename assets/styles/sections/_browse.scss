@@ -20,12 +20,10 @@
         }
         .title {
           color: $secondary_color;
-          position: relative;
-          bottom: 20%;
-          left: 20%;
+          display: block;
+          text-align: center;
           font-size: 2em;
         }
-        
       }
     }
   }

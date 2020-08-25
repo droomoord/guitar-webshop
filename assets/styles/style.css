@@ -145,9 +145,8 @@
 
 #browse .categories .category a .title {
   color: #8D3DB2;
-  position: relative;
-  bottom: 20%;
-  left: 20%;
+  display: block;
+  text-align: center;
   font-size: 2em;
 }
 
@@ -202,7 +201,7 @@
   border: 1px solid black;
   float: right;
   padding: 10px;
-  background-color: #dadada;
+  background-color: #f4f4f4;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -518,7 +517,7 @@ nav .links #cart-items-number.jump {
 }
 
 .search-options {
-  background-color: #cdcdcd;
+  background-color: #e7e7e7;
   border: 1px solid grey;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -555,7 +554,7 @@ nav .links #cart-items-number.jump {
 }
 
 .search-options .bar .delete {
-  background-color: #dadada;
+  background-color: #f4f4f4;
   width: 10px;
   padding: 5px;
   border-radius: 50%;
@@ -625,6 +624,60 @@ nav .links #cart-items-number.jump {
   background-color: #512366;
 }
 
+.landing {
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #0b3d6a;
+  background: -webkit-gradient(linear, left top, right top, color-stop(25%, #0b3d6a), color-stop(79%, #8b30b3));
+  background: linear-gradient(90deg, #0b3d6a 25%, #8b30b3 79%);
+}
+
+.landing .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  position: relative;
+  top: 200px;
+  left: 0px;
+  color: white;
+}
+
+.landing .container h1 {
+  font-size: 3em;
+}
+
+.landing .container .text {
+  width: 300px;
+}
+
+.landing .container .text button {
+  background-color: white;
+  padding: 5px;
+  outline: none;
+  cursor: pointer;
+}
+
+.landing img {
+  width: 35vw;
+  height: 35vw;
+  border-radius: 50%;
+}
+
+.landing svg {
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -651,8 +704,8 @@ a:hover,
 .page {
   margin: 0;
   padding: 20px;
-  min-height: 1000px;
-  background-color: #dadada;
+  min-height: 85vh;
+  background-color: #f4f4f4;
 }
 
 .button {
