@@ -14,26 +14,30 @@
   .container {
     display: flex;
     justify-content: space-around;
+    flex-direction: column;
     h1 {
       font-size: 3em;
     }
     position: relative;
-    top: 200px;
+    top: 10vh;
     left: 0px;
     color: white;
     .text {
       width: 300px;
-      button{
-          background-color: white;
-          padding: 5px;
-          outline: none;
-          cursor: pointer;
+      margin: auto;
+      text-align: center;
+      button {
+        background-color: white;
+        padding: 5px;
+        outline: none;
+        cursor: pointer;
       }
     }
   }
   img {
-    width: 35vw;
-    height: 35vw;
+    margin: auto;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
   }
   svg {
@@ -42,5 +46,18 @@
     bottom: 0;
     left: 0;
     transform: rotateY(180deg);
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .container {
+    flex-direction: row !important;
+    img {
+      width: 320px;
+      height: 320px;
+    }
+    .text {
+      text-align: left !important;
+    }
   }
 }
