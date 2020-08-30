@@ -48,6 +48,7 @@ Vue.component("cart", {
        
         
         <div v-else class="empty-card-message">
+        <img src="assets/images/shopping-cart.png">
         <h4>There are currently no items in your cart!</h4>
         <button class="button" @click="$emit('close')">Okay!</button>
         </div> 

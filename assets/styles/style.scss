@@ -28,12 +28,12 @@ a {
 
 a:hover,
 .active {
-  color: $secondary-color!important;
+  color: $secondary-color !important;
 }
 
 .page {
   margin: 0;
-  padding: 20px;
+  padding: 5px;
   min-height: 85vh;
   background-color: $background_color;
 }
@@ -46,5 +46,11 @@ a:hover,
   border: none;
   &:hover {
     background-color: darken($secondary_color, 20);
+  }
+}
+
+@media screen and (min-width: 480px) {
+  .page {
+    padding: 20px;
   }
 }

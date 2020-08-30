@@ -37,12 +37,12 @@ if (substr( $guitar->images[0]->url, 0, 4 ) !== "http"){
             }?>
         </div>
         <div class="info">
-            <div @click="clickedAdd('<?php echo $guitar->id;?>')"><my-button></my-button></div>
+            <div @click="clickedAdd('<?php echo $guitar->id;?>')"><my-button show-cart text="Add to cart"></my-button></div>
             <h1><?php echo $guitar->name ?></h1>
             <p><?php echo $Parsedown->text($guitar->description); ?></p>
         </div>
     </div>
-    <button class='button' onclick='window.history.back()'>Back</button>
+    <my-button text="back" onclick='window.history.back()'></my-button>
 </div>
 
 <?php include 'partials/footer.php'; ?>

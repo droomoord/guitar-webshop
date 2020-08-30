@@ -5,6 +5,7 @@ var vm = new Vue({
     show: false,
     apiData: [],
     itemIsBeingAdded: false,
+    sideDrawerIsOpen: false,
   },
   methods: {
     clickedAdd: function (id) {
@@ -31,6 +32,14 @@ var vm = new Vue({
     },
     goToUrl: function (event) {
       window.location.href = event.target.value;
+    },
+    openSideDrawer: function () {
+      this.sideDrawerIsOpen = true;
+    },
+    disableScroll: function (val) {
+      val
+        ? (document.body.style.overflow = "hidden")
+        : (document.body.style.overflow = "scroll");
     },
   },
   mounted() {
@@ -67,9 +76,10 @@ var vm = new Vue({
       document.cookie = "cart=" + val.join();
     },
     show: function (val) {
-      val
-        ? (document.body.style.overflow = "hidden")
-        : (document.body.style.overflow = "scroll");
+      this.disableScroll(val);
+    },
+    sideDrawerIsOpen: function (val) {
+      this.disableScroll(val);
     },
   },
 });

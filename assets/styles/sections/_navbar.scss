@@ -1,4 +1,5 @@
 nav {
+  height: 60px;
   position: sticky;
   z-index: 1;
   top: 0;
@@ -6,27 +7,62 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
+  padding: 0 3%;
   border-bottom: 1px solid rgb(80, 80, 80);
-
   .logo {
-    width: 120px;
+    order: 2;
+    width: 90px;
     margin: 10px 0;
   }
-  .links {
-    width: 300px;
+  .hamburger {
+    cursor: pointer;
+    background-color: $background-color;
+    width: 20px;
+    height: 20px;
+    border: 1px solid grey;
+    border-radius: 10%;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 7px;
+    .line {
+      width: 100%;
+      border-bottom: 3px solid rgb(65, 65, 65);
+    }
+  }
+  .side-drawer {
+    width: 40vw;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 5px 5px 5px rgb(77, 77, 77);
+    z-index: 100;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    animation-name: slide-in-from-left;
+    animation-duration: 0.5s;
+    padding-top: 50px;
+    align-items: center;
+    padding-bottom: 100px;
     > * {
+      display: block;
+      margin-left: 20%;
+      margin-bottom: 20px;
+    }
+  }
+  .links {
+    display: none;
+  }
+  .shopping-cart {
+    order: 3;
+    display: flex;
+    align-items: center;
+    img {
       cursor: pointer;
       align-self: center;
-      text-decoration: none;
-      font-family: inherit;
-      color: black;
-      font-size: 0.8em;
-      img {
-        width: 25px;
-      }
+      width: 25px;
+      margin-right: 5px;
     }
     #cart-items-number {
       display: inline-block;
@@ -41,3 +77,34 @@ nav {
   }
 }
 
+@media screen and (min-width: 480px) {
+  nav {
+    height: 73px;
+    .logo {
+      order: 1;
+      width: 120px;
+    }
+    .hamburger {
+      display: none;
+    }
+    .links {
+      order: 2;
+      display: flex;
+      order: 1;
+      width: 50vw;
+      justify-content: flex-end;
+      > * {
+        margin-left: 10%;
+        cursor: pointer;
+        align-self: center;
+        text-decoration: none;
+        font-family: inherit;
+        color: black;
+        font-size: 0.8em;
+      }
+    }
+    .shopping-cart {
+      order: 3;
+    }
+  }
+}

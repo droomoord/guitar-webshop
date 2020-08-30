@@ -77,19 +77,22 @@
 
         <div class="item">
             <div class='specs'>
-                <h1><?php echo $guitar->name; ?></h1>
                 <a 
                     href='./single_item.php?id=<?php echo $guitar->id; ?>'>
                     <img src="<?php echo $guitar->images[0]->formats->thumbnail->url; ?>"
                 >
-                    <?php echo $Parsedown->text($guitar->description); ?>
+                    <div class="description">
+                        <?php echo $guitar->description; ?>   
+                    </div>
                 </a>
+                <h1><?php echo $guitar->name; ?></h1>
             </div>
             <div class="pricing">
                 <div class="box">
                     <h1>€<?php echo $guitar->price; ?></h1>
                     <span @click='clickedAdd("<?php echo $guitar->id; ?>")'>
-                        <my-button></my-button>
+                        <my-button show-cart class="big" text="Add to cart"></my-button>
+                        <my-button show-cart class="small" text="Add"></my-button>
                     </span>
                 </div>
             </div>
