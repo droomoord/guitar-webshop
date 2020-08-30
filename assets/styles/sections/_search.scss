@@ -6,11 +6,10 @@
   &:hover {
     background-color: rgb(196, 196, 196);
   }
-  > * {
-    padding: 0 20px;
-  }
   h4 {
     color: black;
+    width: 40%;
+    font-size: 0.8em;
   }
   img {
     height: 70px;
@@ -21,7 +20,8 @@
     right: 20px;
   }
   .my-button {
-    pointer-events: painted;
+    padding: 8px;
+    font-size: 0.8em;
   }
 }
 
@@ -30,29 +30,36 @@
 }
 
 .search-options {
+  font-size: 0.8em;
   background-color: darken($background_color, 5);
   border: 1px solid grey;
-  display: flex;
+
   border-radius: 5px;
-  & > * {
-    padding: 30px;
-    border-right: 1px solid grey;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  > * {
+    padding: 2.5%;
     display: flex;
   }
   .bar {
+    border-bottom: 1px solid grey;
+    border-right: 1px solid grey;
+
     align-items: center;
-    input{
+    input {
+      width: 100%;
       box-sizing: border-box;
       border: none;
       border-radius: 10px;
       padding: 10px;
       border: 2px solid white;
-      &:focus{
+      &:focus {
         border-color: $secondary_color;
         outline: none;
       }
     }
-    .delete{
+    .delete {
       background-color: $background_color;
       width: 10px;
       padding: 5px;
@@ -63,23 +70,51 @@
     }
   }
   .name-desc {
+    border-bottom: 1px solid grey;
     align-items: center;
   }
-  .category{
+  .category {
     flex-direction: column;
     border-right: none;
   }
   .range {
+    border-right: 1px solid grey;
     flex-direction: column;
+    justify-content: center;
+    > * {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
     input {
       -moz-appearance: textfield;
       width: 60px;
-      float: right;
       &::-webkit-outer-spin-button,
       &::-webkit-inner-spin-button {
         -webkit-appearance: none;
         margin: 0;
       }
+    }
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .search-options {
+    font-size: 1em;
+    display: flex;
+    flex-direction: column;
+    flex-direction: row;
+    > * {
+      border-bottom: none !important;
+      border-right: 1px solid grey;
+    }
+  }
+  .search-item {
+    > * {
+      padding: 0 30px;
+    }
+    h4 {
+      font-size: 1em;
     }
   }
 }

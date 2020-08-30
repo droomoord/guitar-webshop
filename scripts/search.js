@@ -14,11 +14,11 @@ Vue.component("Search", {
         </div>
         <div class="range">
           <div>
-            <label for="min">min</label>
+            <label for="min">min€</label>
             <input type="number" v-model="min" id="min">
           </div>
           <div>
-            <label for="max">max</label>
+            <label for="max">max€</label>
             <input type="number" v-model="max" id="max">
           </div>
         </div>
@@ -35,7 +35,7 @@ Vue.component("Search", {
           ? item.images[0].formats.thumbnail.url
           : path + item.images[0].formats.thumbnail.url">
           <h4>{{ item.name }} - <span class="item-price"> €{{ item.price }} </span></h4>
-          <span class="right" @click.prevent="$emit('clicked-add', item.id)"><my-button></my-button></span>
+          <span class="right" @click.prevent="$emit('clicked-add', item.id)"><my-button  text="Add to cart"></my-button></span>
         </a>
       </div>
       <div v-if="results.length === 0 && search.length > 1">No results for "{{ search }}"</div>
