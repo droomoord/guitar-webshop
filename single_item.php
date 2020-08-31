@@ -22,6 +22,37 @@ if (substr( $guitar->images[0]->url, 0, 4 ) !== "http"){
 
 <div class='single'>
     <div class="item">
+    <div class="images-mobile" ref="imagesMobile">
+        
+        <div class="slider">
+            <div class="arrow">
+                <div class="left" @click="changeImageMobile('left')">
+                    <svg viewBox="0 0 32 32" class="icon icon-chevron-left" viewBox="0 0 32 32" aria-hidden="true"><path d="M14.19 16.005l7.869 7.868-2.129 2.129-9.996-9.997L19.937 6.002l2.127 2.129z"/></svg>
+                </div>
+            </div>
+            
+            <div class="wrapper">
+                <?php foreach($guitar->images as $index=>$image) {
+                    if (substr( $image->url, 0, 4 ) !== "http"){
+                        $image->url = $path . $image->url;
+                    };
+                    if ($index === 0){
+                        echo "<img class='visible' src={$image->url}></img>";
+                    } else {
+                        echo "<img class='hidden' src={$image->url}></img>";
+                    }
+                } 
+                ?>
+            </div>
+
+            <div class="arrow">
+                <div class="right" @click="changeImageMobile('right')">
+                    <svg viewBox="0 0 32 32" class="icon icon-chevron-right" viewBox="0 0 32 32" aria-hidden="true"><path d="M18.629 15.997l-7.083-7.081L13.462 7l8.997 8.997L13.457 25l-1.916-1.916z"/></svg>
+                </div>
+            </div>
+        </div>
+        
+    </div>
         <div class="images">
             <a ref="imagelink" href="<?php echo $guitar->images[0]->url ?>" target="_blank">
                 <img class="image-big" ref="image" src="<?php echo $guitar->images[0]->url ?>">

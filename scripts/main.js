@@ -30,6 +30,7 @@ var vm = new Vue({
       this.$refs.image.setAttribute("src", url);
       this.$refs.imagelink.setAttribute("href", url);
     },
+
     goToUrl: function (event) {
       window.location.href = event.target.value;
     },
@@ -40,6 +41,33 @@ var vm = new Vue({
       val
         ? (document.body.style.overflow = "hidden")
         : (document.body.style.overflow = "scroll");
+    },
+    changeImageMobile: function (direction) {
+      const currentImage = this.$refs.imagesMobile.querySelector(".visible");
+      currentImage.classList.remove("visible");
+      currentImage.classList.add("hidden");
+      if (direction === "right") {
+        if (currentImage.nextElementSibling) {
+          currentImage.nextElementSibling.classList.remove("hidden");
+          currentImage.nextElementSibling.classList.add("visible");
+        } else {
+          this.$refs.imagesMobile
+            .querySelector("img")
+            .classList.remove("hidden");
+          this.$refs.imagesMobile.querySelector("img").classList.add("visible");
+        }
+      }
+      if (direction === "left") {
+        if (currentImage.previousElementSibling) {
+          currentImage.previousElementSibling.classList.remove("hidden");
+          currentImage.previousElementSibling.classList.add("visible");
+        } else {
+          const images = this.$refs.imagesMobile.querySelectorAll("img");
+          const lastImage = images[images.length - 1];
+          lastImage.classList.remove("hidden");
+          lastImage.classList.add("visible");
+        }
+      }
     },
   },
   mounted() {

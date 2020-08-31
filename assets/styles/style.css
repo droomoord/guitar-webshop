@@ -695,6 +695,10 @@ nav .shopping-cart #cart-items-number.jump {
   display: -ms-flexbox;
   display: flex;
   margin-bottom: 5px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .single .item h1 {
@@ -704,6 +708,62 @@ nav .shopping-cart #cart-items-number.jump {
 
 .single .item p {
   font-size: 0.8em;
+}
+
+.single .item .images-mobile {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.single .item .images-mobile .slider {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+
+.single .item .images-mobile .slider .arrow {
+  cursor: pointer;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 1px solid black;
+  background-color: #e4e4e4;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.single .item .images-mobile .slider .arrow .left,
+.single .item .images-mobile .slider .arrow .right {
+  width: 50px;
+}
+
+.single .item .images-mobile .slider .wrapper {
+  width: 60%;
+  max-width: 310px;
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+  padding: 20px 0;
+  background-color: white;
+}
+
+.single .item .images-mobile .slider .wrapper img {
+  width: 100%;
+}
+
+.single .item .images-mobile .slider .visible {
+  visibility: visible;
+}
+
+.single .item .images-mobile .slider .hidden {
+  display: none;
 }
 
 .single .item .images {
@@ -749,6 +809,15 @@ nav .shopping-cart #cart-items-number.jump {
 }
 
 @media screen and (min-width: 768px) {
+  .single .item {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .single .item .images-mobile {
+    display: none;
+  }
   .single .item .images {
     display: inline-block;
   }

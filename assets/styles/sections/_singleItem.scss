@@ -1,15 +1,56 @@
 .single {
   padding: 20px 3%;
   .item {
+    display: flex;
+    margin-bottom: 5px;
+    flex-direction: column;
     h1 {
       font-size: 1em;
       margin-top: 0;
     }
-    p{
+    p {
       font-size: 0.8em;
     }
-    display: flex;
-    margin-bottom: 5px;
+    .images-mobile {
+      display: block;
+      margin: 0 auto;
+      margin-bottom: 20px;
+
+      .slider {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        .arrow {
+          cursor: pointer;
+          box-sizing: border-box;
+          border: 1px solid black;
+          background-color: rgb(228, 228, 228);
+          display: flex;
+          align-items: center;
+          .left,
+          .right {
+            width: 50px;
+          }
+        }
+        .wrapper {
+          width: 60%;
+          max-width: 310px;
+          border-bottom: 1px solid black;
+          border-top: 1px solid black;
+          padding: 20px 0;
+          background-color: white;
+          img {
+            width: 100%;
+          }
+        }
+        .visible {
+          visibility: visible;
+        }
+        .hidden {
+          display: none;
+        }
+      }
+    }
     .images {
       display: none;
       width: 40%;
@@ -42,12 +83,12 @@
 }
 
 @media screen and (min-width: 480px) {
-  .single{
-    .item{
-      h1{
+  .single {
+    .item {
+      h1 {
         font-size: 2em;
       }
-      p{
+      p {
         font-size: 1em;
       }
     }
@@ -57,13 +98,17 @@
 @media screen and (min-width: 768px) {
   .single {
     .item {
+      flex-direction: row;
+      .images-mobile {
+        display: none;
+      }
       .images {
         display: inline-block;
       }
       .info {
         width: 50%;
       }
-      button{
+      button {
         padding: 10px;
       }
     }
