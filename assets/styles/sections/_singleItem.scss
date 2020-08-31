@@ -1,20 +1,25 @@
 .single {
-  padding: 10px 30px;
+  padding: 20px 3%;
   .item {
-    h1{
+    h1 {
+      font-size: 1em;
       margin-top: 0;
     }
-     display: flex;
-     margin-bottom: 5px;
+    p{
+      font-size: 0.8em;
+    }
+    display: flex;
+    margin-bottom: 5px;
     .images {
-       width: 40%;
-       margin: auto;
+      display: none;
+      width: 40%;
+      margin: auto;
       .thumb {
         width: 70px;
         padding-right: 8px;
         cursor: pointer;
       }
-      .image-big{
+      .image-big {
         margin-bottom: 10px;
         max-width: 300px;
         display: block;
@@ -24,14 +29,43 @@
       }
     }
     .info {
-      width: 50%;
+      width: 100%;
       line-height: 1.5;
       max-height: 300px;
       overflow-y: scroll;
     }
   }
   button {
-    padding: 10px;
+    padding: 5px;
     float: right;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  .single{
+    .item{
+      h1{
+        font-size: 2em;
+      }
+      p{
+        font-size: 1em;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .single {
+    .item {
+      .images {
+        display: inline-block;
+      }
+      .info {
+        width: 50%;
+      }
+      button{
+        padding: 10px;
+      }
+    }
   }
 }
