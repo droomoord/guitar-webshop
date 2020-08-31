@@ -12,8 +12,8 @@
 <div id="app">
     <?php 
     include 'navbar.php'; 
-    $path = 'http://localhost:1337';
-    // $path = 'https://guitar-webshop-cms.herokuapp.com';
+    // $path = 'http://localhost:1337';
+    $path = 'https://guitar-webshop-cms.herokuapp.com';
     ?>  
         <template v-if="show">
             <backdrop @click.native="show = false"></backdrop>
