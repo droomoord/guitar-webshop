@@ -1,5 +1,4 @@
 .search-item {
-  padding: 20px 0;
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -10,6 +9,7 @@
     color: black;
     width: 40%;
     font-size: 0.8em;
+    padding-left: 10px;
   }
   img {
     height: 70px;
@@ -110,6 +110,7 @@
     }
   }
   .search-item {
+    padding: 20px 0;
     > * {
       padding: 0 30px;
     }

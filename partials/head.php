@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/styles/style.css">
-    <script src="./scripts/vue.js" ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+    <!-- <script src="./scripts/vue.js"></script> -->
+    <script src="./scripts/vue.min.js"></script>
+    <script src="./scripts/axios.min.js"></script>
     <title>The Guitar King</title>
 </head>
 <body>

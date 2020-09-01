@@ -217,6 +217,12 @@
 
 #browse-results .item .specs {
   width: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 #browse-results .item .specs h1 {
@@ -277,20 +283,23 @@
     margin-bottom: 15px;
   }
   #browse-results .item .specs {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
   }
-  #browse-results .item .specs h1 {
+  #browse-results .item .specs .name {
     font-size: 2em;
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1;
     margin-bottom: 10px;
+  }
+  #browse-results .item .specs .name h1 {
+    color: black;
   }
   #browse-results .item .specs img {
     height: 100px;
@@ -302,6 +311,9 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   #browse-results .item .specs .description {
     display: inline-block;
@@ -830,7 +842,6 @@ nav .shopping-cart #cart-items-number.jump {
 }
 
 .search-item {
-  padding: 20px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -848,6 +859,7 @@ nav .shopping-cart #cart-items-number.jump {
   color: black;
   width: 40%;
   font-size: 0.8em;
+  padding-left: 10px;
 }
 
 .search-item img {
@@ -983,6 +995,9 @@ nav .shopping-cart #cart-items-number.jump {
   .search-options > * {
     border-bottom: none !important;
     border-right: 1px solid grey;
+  }
+  .search-item {
+    padding: 20px 0;
   }
   .search-item > * {
     padding: 0 30px;
@@ -1140,9 +1155,24 @@ a:hover,
   background-color: #512366;
 }
 
+footer {
+  width: 100%;
+  margin-top: 20px;
+  padding: 10px 0;
+  border-top: 1px solid black;
+}
+
+footer a {
+  font-size: 0.8em;
+  float: right;
+}
+
 @media screen and (min-width: 480px) {
   .page {
     padding: 20px;
+  }
+  footer a {
+    font-size: 1em;
   }
 }
 /*# sourceMappingURL=style.css.map */

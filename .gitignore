@@ -1,3 +1,5 @@
 strapi
 strapiMongo
-.DS_Store
+**/.DS_Store
+# this is the development Vue file:
+vue.js 

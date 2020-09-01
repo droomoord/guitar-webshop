@@ -49,8 +49,24 @@ a:hover,
   }
 }
 
+footer {
+  width: 100%;
+  margin-top: 20px;
+  padding: 10px 0;
+  border-top: 1px solid black;
+  a {
+    font-size: 0.8em;
+    float: right;
+  }
+}
+
 @media screen and (min-width: 480px) {
   .page {
     padding: 20px;
+  }
+  footer{
+    a{
+      font-size: 1em;
+    }
   }
 }

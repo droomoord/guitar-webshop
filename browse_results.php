@@ -85,7 +85,9 @@
                         <?php echo $guitar->description; ?>   
                     </div>
                 </a>
-                <h1><?php echo $guitar->name; ?></h1>
+                <a class="name" href='./single_item.php?id=<?php echo $guitar->id; ?>'>
+                    <h1><?php echo $guitar->name; ?></h1>
+                </a>                
             </div>
             <div class="pricing">
                 <div class="box">
