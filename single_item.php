@@ -73,7 +73,7 @@ if (substr( $guitar->images[0]->url, 0, 4 ) !== "http"){
             <p><?php echo $Parsedown->text($guitar->description); ?></p>
         </div>
     </div>
-    <my-button text="back" onclick='window.history.back()'></my-button>
+    <my-button text="Back" onclick='window.history.back()'></my-button>
 </div>
 
 <?php include 'partials/footer.php'; ?>

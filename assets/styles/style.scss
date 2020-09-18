@@ -14,7 +14,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Helvetica, sans-serif;
+  font-family: 'Raleway', sans-serif;
   color: rgb(41, 41, 41);
 }
 
@@ -47,6 +47,10 @@ a:hover,
   &:hover {
     background-color: darken($secondary_color, 20);
   }
+}
+
+button:active {
+  transform: scale(0.95);
 }
 
 footer {

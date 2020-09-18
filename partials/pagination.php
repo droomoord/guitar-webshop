@@ -1,3 +1,4 @@
+<div class="pagination">
 <?php 
     $numberOfGuitars = file_get_contents($path . "/guitars/count$category");
     $start = intval($query['_start']);
@@ -21,4 +22,5 @@
     ? " <a href='browse_results.php$category$sort&_start=" . ($start + 10) . "&_limit=10'> ></a>" 
     : "<span> ></span>";
     echo $nextPageLink;
-?>    
+?>
+</div>    
