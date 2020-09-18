@@ -1071,7 +1071,7 @@ nav .shopping-cart #cart-items-number.jump {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   position: relative;
-  top: 10vh;
+  top: 5vh;
   left: 0px;
   color: white;
 }
@@ -1106,7 +1106,7 @@ nav .shopping-cart #cart-items-number.jump {
 .landing svg {
   display: inline-block;
   position: absolute;
-  bottom: 0;
+  bottom: -40px;
   left: 0;
   -webkit-transform: rotateY(180deg);
           transform: rotateY(180deg);
